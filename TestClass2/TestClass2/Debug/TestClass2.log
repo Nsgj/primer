@@ -1,44 +1,8 @@
-﻿生成启动时间为 2015/11/15 20:24:57。
-     1>项目“G:\BaiduYunDownload\TestClass2\TestClass2\TestClass2.vcxproj”在节点 2 上(Rebuild 个目标)。
-     1>ClCompile:
-         D:\visual studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Employee.cpp Folder.cpp HasPtr.cpp HasPtrWithCount.cpp main.cpp Message.cpp StrBlob.cpp StrBlobPtr.cpp StrVec.cpp
-         StrVec.cpp
-     1>d:\visual studio\vc\include\xmemory(350): warning C4996: 'std::_Uninitialized_copy0': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
-         d:\visual studio\vc\include\xmemory(336): note: 参见“std::_Uninitialized_copy0”的声明
-         g:\baiduyundownload\testclass2\testclass2\strvec.cpp(10): note: 参见对正在编译的函数 模板 实例化“_FwdIt std::uninitialized_copy<const std::string*,std::basic_string<char,std::char_traits<char>,std::allocator<char>>*>(_InIt,_InIt,_FwdIt)”的引用
-                 with
-                 [
-                     _FwdIt=std::basic_string<char,std::char_traits<char>,std::allocator<char>> *,
-                     _InIt=const std::string *
-                 ]
-         StrBlobPtr.cpp
-         StrBlob.cpp
-         Message.cpp
-     1>g:\baiduyundownload\testclass2\testclass2\folder.h(10): error C2061: 语法错误: 标识符“Message”
-     1>g:\baiduyundownload\testclass2\testclass2\folder.h(11): error C2061: 语法错误: 标识符“Message”
-     1>g:\baiduyundownload\testclass2\testclass2\folder.h(13): error C2065: “Message”: 未声明的标识符
-     1>g:\baiduyundownload\testclass2\testclass2\folder.h(13): error C2059: 语法错误:“>”
-     1>g:\baiduyundownload\testclass2\testclass2\folder.h(13): error C2976: “std::set”: 模板 参数太少
-         d:\visual studio\vc\include\set(43): note: 参见“std::set”的声明
-     1>g:\baiduyundownload\testclass2\testclass2\message.cpp(11): error C2084: 函数“Message::Message(const Message &)”已有主体
-         g:\baiduyundownload\testclass2\testclass2\message.cpp(7): note: 参见“{ctor}”的前一个定义
-     1>g:\baiduyundownload\testclass2\testclass2\message.cpp(22): error C2660: “Folder::addMsg”: 函数不接受 1 个参数
-     1>g:\baiduyundownload\testclass2\testclass2\message.cpp(27): error C2660: “Folder::remMsg”: 函数不接受 1 个参数
-     1>g:\baiduyundownload\testclass2\testclass2\message.cpp(32): error C2660: “Folder::addMsg”: 函数不接受 1 个参数
-     1>g:\baiduyundownload\testclass2\testclass2\message.cpp(37): error C2660: “Folder::remMsg”: 函数不接受 1 个参数
-     1>g:\baiduyundownload\testclass2\testclass2\message.cpp(53): error C2660: “Folder::remMsg”: 函数不接受 1 个参数
-     1>g:\baiduyundownload\testclass2\testclass2\message.cpp(56): error C2660: “Folder::remMsg”: 函数不接受 1 个参数
-     1>g:\baiduyundownload\testclass2\testclass2\message.cpp(63): error C2660: “Folder::addMsg”: 函数不接受 1 个参数
-     1>g:\baiduyundownload\testclass2\testclass2\message.cpp(66): error C2660: “Folder::addMsg”: 函数不接受 1 个参数
-         main.cpp
-         HasPtrWithCount.cpp
-         HasPtr.cpp
-     1>g:\baiduyundownload\testclass2\testclass2\hasptr.cpp(31): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
-         Folder.cpp
-         Employee.cpp
-         正在生成代码...
-     1>已完成生成项目“G:\BaiduYunDownload\TestClass2\TestClass2\TestClass2.vcxproj”(Rebuild 个目标)的操作 - 失败。
+﻿生成启动时间为 2015/11/17 10:40:45。
+     1>项目“D:\git\primer\TestClass2\TestClass2\TestClass2.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(64,5): error MSB8020: The build tools for v140 (Platform Toolset = 'v140') cannot be found. To build using the v140 build tools, please install v140 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Upgrade Solution...".
+     1>已完成生成项目“D:\git\primer\TestClass2\TestClass2\TestClass2.vcxproj”(Rebuild 个目标)的操作 - 失败。
 
 生成失败。
 
-已用时间 00:00:03.78
+已用时间 00:00:00.17

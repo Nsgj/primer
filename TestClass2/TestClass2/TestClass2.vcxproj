@@ -82,6 +82,7 @@
     <ClInclude Include="HasPtr.h" />
     <ClInclude Include="HasPtrWithCount.h" />
     <ClInclude Include="Message.h" />
+    <ClInclude Include="MyString.h" />
     <ClInclude Include="StrBlob.h" />
     <ClInclude Include="StrBlobPtr.h" />
     <ClInclude Include="structX.h" />
@@ -95,6 +96,7 @@
     <ClCompile Include="HasPtrWithCount.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Message.cpp" />
+    <ClCompile Include="MyString.cpp" />
     <ClCompile Include="StrBlob.cpp" />
     <ClCompile Include="StrBlobPtr.cpp" />
     <ClCompile Include="StrVec.cpp" />

@@ -5,13 +5,18 @@
 #include <string>
 #include <map>
 #include <iostream>
+#include <algorithm>
 
 //StrVec是个模仿vector但是只有string操作的容器类型
 class StrVec{
 public:
 	StrVec() :elements(nullptr), first_free(nullptr), cap(nullptr){}
+	StrVec(std::initializer_list<std::string>);
 	StrVec(const StrVec&);
 	StrVec& operator=(const StrVec&);
+
+	StrVec(StrVec&&);
+	StrVec& operator=(StrVec &&);
 	~StrVec();
 
 	void push_back(const std::string&);

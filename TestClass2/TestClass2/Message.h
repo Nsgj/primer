@@ -10,9 +10,15 @@ public:
 	explicit Message(const std::string & = "");
 	Message(const Message&);
 	Message& operator=(const Message&);
+
+	Message(Message&&);
+	Message& operator=(Message&&);
 	~Message();
 	void save(Folder&);
 	void remove(Folder&);
+
+	void addFolder(Folder*);
+	void remFolders(Folder*);
 private:
 	std::string contents;
 	std::set<Folder*> folders;

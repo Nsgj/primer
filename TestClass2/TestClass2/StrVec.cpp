@@ -1,4 +1,5 @@
 #include "StrVec.h"
+
 void StrVec::push_back(const std::string& s){
 	chk_n_alloc();
 	alloc.construct(first_free++, s);
@@ -10,17 +11,31 @@ std::pair<std::string*, std::string*> StrVec::alloc_n_copy(const std::string*b, 
 	return{ data, std::uninitialized_copy(b, e, data) };//返回一个列表初始化的pair
 }
 void StrVec::free(){
-	if (elements){
+	/*if (elements){
 		for (auto p = first_free; p != elements;){
 			alloc.destroy(--p);
 		}
 		alloc.deallocate(elements, cap - elements);
-	}
+	}*/
+	std::for_each(elements, first_free, [this](std::string& p){alloc.destroy(&p); });
+	alloc.deallocate(elements, cap - elements);
 }
 StrVec::StrVec(const StrVec &s){
 	auto newdata = alloc_n_copy(s.begin(), s.end());
 	elements = newdata.first;
 	first_free = cap = newdata.second;//尾指针和使用量指针指向同一个位置
+}
+
+StrVec::StrVec(std::initializer_list<std::string> li){
+	/*std::string temp("");
+	for (auto f : li){
+		temp += f;
+	}
+	elements = new std::string(temp);
+	first_free = cap = elements + temp.size();*/
+	auto pair = alloc_n_copy(li.begin(), li.end());
+	elements = pair.first;
+	first_free = cap = pair.second;
 }
 StrVec::~StrVec(){
 	free();
@@ -44,5 +59,20 @@ void StrVec::reallocate(){
 	free();
 	elements = newdata;
 
+}
+
+StrVec::StrVec(StrVec&& sv) noexcept :elements(sv.elements),first_free(sv.first_free),cap(sv.cap){
+	sv.elements = sv.first_free = sv.cap = nullptr;
+}
+StrVec& StrVec::operator=(StrVec &&sv){
+	if (&sv != this){
+		free();
+		elements = sv.elements;
+		first_free = sv.first_free;
+		cap = sv.cap;
+
+		sv.elements = sv.cap = sv.first_free = nullptr;
+	}
+	return *this;
 }
 std::allocator<std::string> StrVec::alloc;
