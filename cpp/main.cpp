@@ -1,30 +1,56 @@
-#include <iostream>
-#include "Quote.h"
-#include "Bulk_quote.h"
-#include <iostream>
-
-double print_total(std::ostream &, const Quote &, size_t);
+#pragma once
+//#include "Sales_data.h"
+#include "Screen.h"
 int main(){
-	/*Quote basic;
-	Bulk_quote bulk;
+	/*Sales_data total;
+	if (read(std::cin,total)){
+		Sales_data trans;
+		while (read(std::cin,trans))
+		{
+			if (total.getIsbn() == trans.getIsbn()){
+				total.combine(trans);
+			}
+			else
+			{
+				print(std::cout, total) << std::endl;
+				total = trans;
+			}
+		}
+		print(std::cout, total) << std::endl;
+	}
+	else
+	{
+		std::cerr << "NO data?!" << std::endl;
+	}*/
 
-	Quote &P = basic;
-	Quote item;
-	Bulk_quote bulk;
-	Quote *p = &item;
-	p = &bulk;
-	Quote &r = bulk;*///引用和指针都可以使用这种多态性
+	/*Sales_data total(std::cin);
+	if (!total.getIsbn().empty()){
+		std::istream &is = std::cin;;
+		while (is)
+		{
+			Sales_data trans(is);
+			if (total.getIsbn() == trans.getIsbn()){
+				total.combine(trans);
+			}
+			else
+			{
+				print(std::cout, total) << std::endl;
+				total = trans;
+			}
+		}
+		print(std::cout, total) << std::endl;
+	}
+	else
+	{
+		std::cerr << "No data?!" << std::endl;
+	}*/
 
-	/*print_total(std::cout, basic, 20);
-	print_total(std::cout, bulk, 20);*/
-	Quote base("0-201-82470-1", 50);
-	print_total(std::cout, base, 10);
-	Bulk_quote derived("0-201-82470-1", 50, 5, .19);
-	print_total(std::cout, derived, 10);
-}
+	/*Sales_data sd1;
+	Sales_data sd2("1234");
+	Sales_data sd3("wewe", 2312, 2.9);
+	Sales_data sd4(std::cin);*/
 
-double print_total(std::ostream &os, const Quote &item, size_t n){
-	double ret = item.net_price(n);
-	os << "ISBN:" << item.isbn() << "# sold:" << n << "total due:" << ret << std::endl;
-	return ret;
+	Screen myscreen;
+	char ch = myscreen.get();
+	myscreen.get(0, 0);
 }
