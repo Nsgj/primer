@@ -8,7 +8,7 @@ Sales_data& Sales_data::combine(const Sales_data& sd){
 	revenue += sd.revenue;
 	return *this;
 }
-double Sales_data::avg_price()const{
+inline double Sales_data::avg_price()const{
 	if (units_sold){
 		return revenue / units_sold;
 	}
